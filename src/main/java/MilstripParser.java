@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 public class MilstripParser  implements Parser {
     private static final int SIZE = 80;
@@ -21,7 +24,13 @@ public class MilstripParser  implements Parser {
             throw new FormatException();
             
         }
-        MILS milstrip = null;
+        
+       // System.out.println("parse : " + source);
+                
+        Scanner scanner = new Scanner(source);
+		Milstrip milstrip = scanSource(scanner);
+		scanner.close();
+        
         return milstrip;
         
     }
@@ -41,6 +50,33 @@ public class MilstripParser  implements Parser {
 	    MILS milstrip = null;
 	    return milstrip;
     }
+    
+    /**
+	 * private helper method
+	 * @param scanner
+	 * @return
+	 */
+private Milstrip scanSource(Scanner scanner) {
+
+		Milstrip milstrip = new Milstrip();
+
+	       while (scanner.hasNext()) {
+	           String line = scanner.nextLine();
+	           List<String> tokens = new ArrayList<String>();
+        	   tokens = Arrays.asList(line.substring(0,80));
+	      // for(String Tx: tokens){
+	           System.out.println("Tx: " + tokens);
+	           //System.out.println (tokens + " " + z);
+	     //  }
+       }
+
+			
+		//}
+		
+       // milstrip = "1"
+		return milstrip;
+    }
+	
 
     
 }
