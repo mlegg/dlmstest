@@ -1,3 +1,8 @@
 //
-public class MilstrapParser {
+public class MilstrapParser implements Parser {
+    
+    public MilstripParser(){
+        
+    }
+    
 }
