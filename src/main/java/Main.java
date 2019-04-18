@@ -2,7 +2,8 @@
 public class Main {
   
     public static void main(String args[]) {
-    String z;    
+    String z;  
+   
 	z = "AE1NRPS3110012345678X1SE00050N1112962028460 N14629JHM 1HZN203363BMNMZ    3029700 \nAE2NRPS3110012345678X1SE00050N1112962028460 N14629JHM 1HZN203363BMNMZ    3029700 \nAE3NRPS3110012345678X1SE00050N1112962028460 N14629JHM 1HZN203363BMNMZ    3029700";
 
 	
@@ -10,7 +11,19 @@ public class Main {
     Parser parser = new MilstripParser();
     
     try {
+        
         milstrip = (MILS) parser.parse(z);
+        
+        System.out.println(countLines(z));
+        //for (Loop txBlock : countLines(z)) {
+        //}
+        //int y;
+        //while (y <= countLines(z))
+        //{
+            //loop statements...
+          //  y++;
+        //}
+        
     } catch (Exception e) {
         e.printStackTrace();
         
@@ -33,4 +46,11 @@ public class Main {
 	
     }
 
+    private static int countLines(String str){
+        String[] lines = str.split("\r\n|\r|\n");
+        return  lines.length;
+    }
+
 }
+
+

@@ -64,16 +64,17 @@ private Milstrip scanSource(Scanner scanner) {
 	           String line = scanner.nextLine();
 	           List<String> tokens = new ArrayList<String>();
         	   tokens = Arrays.asList(line.substring(0,80));
-	      // for(String Tx: tokens){
-	           System.out.println("Tx: " + tokens);
-	           //System.out.println (tokens + " " + z);
-	     //  }
+	           //System.out.println("Tx: " + tokens);
+	           // retrieving data from string list array in for loop
+                for(String s: tokens){
+	                   System.out.println(s);
+	                    //milstrip = s;
+            	}
+	           
+               
        }
 
-			
-		//}
-		
-       // milstrip = "1"
+
 		return milstrip;
     }
 	
